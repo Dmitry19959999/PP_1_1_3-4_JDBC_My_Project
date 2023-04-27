@@ -9,27 +9,27 @@ import java.util.List;
 
 
 public class UserServiceImpl extends Util implements UserService {
-    private final UserDao userDao = new UserDaoJDBCImpl();
+    private static final UserDao USER_DAO = new UserDaoJDBCImpl();
 
     public void createUsersTable() {
-        userDao.createUsersTable();
+        USER_DAO.createUsersTable();
     }
 
     public void dropUsersTable() {
-        userDao.dropUsersTable();
+        USER_DAO.dropUsersTable();
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        userDao.saveUser(name, lastName, age);
+        USER_DAO.saveUser(name, lastName, age);
         System.out.println("User с именем – " + name + " добавлен в базу данных");
     }
 
     public void removeUserById(long id) {
-        userDao.removeUserById(id);
+        USER_DAO.removeUserById(id);
     }
 
     public List<User> getAllUsers() {
-        List<User> users = userDao.getAllUsers();
+        List<User> users = USER_DAO.getAllUsers();
         for (User user : users) {
             System.out.println(user);
         }
@@ -37,6 +37,6 @@ public class UserServiceImpl extends Util implements UserService {
     }
 
     public void cleanUsersTable() {
-        userDao.cleanUsersTable();
+        USER_DAO.cleanUsersTable();
     }
 }
