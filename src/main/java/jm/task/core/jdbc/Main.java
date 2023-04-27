@@ -14,7 +14,7 @@ public class Main {
         USER_SERVICE.saveUser("Ivan", "Ivanov", (byte) 25);
         USER_SERVICE.saveUser("Petr", "Petrov", (byte) 64);
         USER_SERVICE.saveUser("Sidor", "Sidorov", (byte) 72);
-        USER_SERVICE.saveUser("Mihail", "Mihailov", (byte) 47);
+        USER_SERVICE.saveUser("Mihail", "Miсhailov", (byte) 47);
         USER_SERVICE.getAllUsers();
         USER_SERVICE.cleanUsersTable();
         USER_SERVICE.dropUsersTable();
